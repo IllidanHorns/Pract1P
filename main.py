@@ -1,6 +1,63 @@
 import math
 
 UserChoice = 123
+def c1(num1,num2):
+    S = num1 + num2
+    return S
+
+def c2(num1,num2):
+    S = num1 - num2
+    return S
+
+def c3(num1,num2):
+    S = num1*num2
+    return S
+
+def c4(num1,num2):
+    S = num1/num2
+    return S
+
+def c5(num1,num2):
+    return num1**num2
+
+def c6(num1):
+    return math.sqrt(num1)
+
+def c7(num1):
+    return math.factorial(num1)
+
+def c8(num1):
+    return math.sin(num1)
+
+def c9(num1):
+    return math.cos(num1)
+
+def c10(num1):
+    return math.tan(num1)
+
+def inputFunc():
+    try:
+        num1 = float(input())
+        num2 = float(input())
+        return num1, num2
+    except:
+        print("Скорее всего вы ввели данные неправильно")
+        return 0, 0
+
+def inputFuncInt():
+    try:
+        num1 = int(input())
+        return num1
+    except:
+        print("Скорее всего вы ввели данные неправильно")
+        return 0, 0
+def inputFunc1():
+    try:
+        num1 = float(input())
+        return num1
+    except:
+        print("Скорее всего вы ввели данные неправильно")
+
 while UserChoice != 9:
     print("\n"
           "Выберите действие: \n"
@@ -19,78 +76,35 @@ while UserChoice != 9:
         UserChoice = int(input())
         match(UserChoice):
             case 1:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    num2 = float(input("Введите 2 число "))
-                    print("Ответ: ", num1+num2)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1, num2 = inputFunc()
+                print("Ответ: ", c1(num1,num2))
             case 2:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    num2 = float(input("Введите 2 число "))
-                    print("Ответ: ", num1-num2)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1, num2 = inputFunc()
+                print("Ответ: ", c2(num1,num2))
             case 3:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    num2 = float(input("Введите 2 число "))
-                    print("Ответ: ", num1*num2)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1, num2 = inputFunc()
+                print("Ответ: ", c3(num1, num2))
             case 4:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    num2 = float(input("Введите 2 число "))
-                    print("Ответ: ", num1/num2)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1, num2 = inputFunc()
+                print("Ответ: ", c4(num1, num2))
             case 5:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    num2 = float(input("Введите степень числа "))
-                    print(num1**num2)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1, num2 = inputFunc()
+                print("Ответ: ", c5(num1, num2))
             case 6:
-                try:
-                    num1 = float(input("Введите 1 число "))
-                    print("Ответ: ", math.sqrt(num1))
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1 = inputFunc1()
+                print("Ответ: ", c6(num1))
             case 7:
-                try:
-                    num1 = int(input("Введите 1 число "))
-                    if num1 < 0:
-                        print("Факториал нельзя найти от отрицательного числа!")
-                    elif num1 == 0 or num1 == 1:
-                        print("Ответ: 1")
-                    else:
-                        CountNum1 = 1
-                        for i in range(1, num1+1):
-                            CountNum1 = CountNum1 * i
-                        print("Ответ: ", CountNum1)
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1 = inputFuncInt()
+                print("Ответ: ", c7(num1))
             case 8:
-                try:
-                    num1 = float(input("Введите число в радианах "))
-                    print("Ответ: ", math.sin(num1))
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1 = inputFunc1()
+                print("Ответ: ", c8(num1))
             case 9:
-                try:
-                    num1 = float(input("Введите число в радианах "))
-                    print("Ответ: ", math.cos(num1))
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1 = inputFunc1()
+                print("Ответ: ", c9(num1))
             case 10:
-                try:
-                    num1 = float(input("Введите число в радианах "))
-                    print("Ответ: ", math.tan(num1))
-                except:
-                    print("Скорее всего вы ввели данные неправильно!")
+                num1 = inputFunc1()
+                print("Ответ: ", c10(num1))
             case 0:
                 break
     except:
