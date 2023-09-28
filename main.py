@@ -57,6 +57,7 @@ def inputFunc1():
         return num1
     except:
         print("Скорее всего вы ввели данные неправильно")
+        return 0
 
 while UserChoice != 9:
     print("\n"
